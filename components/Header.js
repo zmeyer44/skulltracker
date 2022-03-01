@@ -29,6 +29,7 @@ const Header = () => {
           <HeaderLink label="explore" href="/" />
           <HeaderLink label="Leaderboard" href="/leaderboard" />
           <HeaderLink label="Generate" href="/generate" />
+          <HeaderLink label="about" href="https://cryptoskulls.vercel.app/" />
         </div>
         <button
           className={`menu ${menuOpen} z-20 sm:hidden`}
@@ -47,7 +48,13 @@ const Header = () => {
       >
         <HeaderLink label="explore" href="/" large />
         <HeaderLink label="Leaderboard" href="/leaderboard" large />
+
         <HeaderLink label="Generate" href="/generate" large />
+        <HeaderLink
+          label="about"
+          href="https://cryptoskulls.vercel.app/"
+          large
+        />
       </nav>
     </header>
   );
