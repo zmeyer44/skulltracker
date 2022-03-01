@@ -86,7 +86,7 @@ export default function Generate() {
                   <LargeInfoBox {...data} download={onImageCownload} />
                   <QRCode
                     id="SkullTrackerQRCode"
-                    value={`https://skullnation.app?t=${input}`}
+                    value={`https://skulltracker.app?t=${input}`}
                   />
                 </div>
                 <p
