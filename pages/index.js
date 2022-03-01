@@ -89,11 +89,11 @@ export default function Home() {
             <h1 className="font-crush text-white text-[3em] md:text-[4.5em] text-center tracking-wide">
               Skull <span className="text-red-700">Tracker</span>
             </h1>
-            <div className="w-full max-w-5xl my-2 px-10 sm:mt-4 lg:mt-6 lg:mb-4 relative h-[400px] lg:h-[500px]">
+            <div className="w-full max-w-5xl my-2 px-3 sm:px-10 sm:mt-4 lg:mt-6 lg:mb-4 relative h-[400px] lg:h-[500px]">
               <Map />
             </div>
             <div className="flex justify-center max-w-lg w-full mt-2">
-              <p className="text-slate-300 text-center font-mono text-md lg:text-lg">
+              <p className="text-slate-300 text-center font-mono text-sm lg:text-lg">
                 Here is a live map of Skull Nation! Every time a Skull Tracker
                 QR Code is scanned the location will be added to the map.
               </p>
