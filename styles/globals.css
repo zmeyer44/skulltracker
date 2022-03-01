@@ -1,16 +1,74 @@
-html,
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .center {
+    @apply flex items-center justify-center;
+  }
+}
+@font-face {
+  font-family: Type Writer;
+  src: url(../fonts/type_writer.ttf);
+}
+@font-face {
+  font-family: Robot Crush;
+  src: url(../fonts/RobotCrush.otf) format("opentype");
+}
+
+button.menu {
+  position: relative;
   padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  align-items: center;
+  justify-content: center;
+  border-width: 0 !important;
+  margin-right: 1.5rem;
+  background: none;
+  width: 1.5rem;
+  height: 2rem;
+  border-color: rgba(0, 0, 0, 0);
+  appearance: none;
+  outline: none;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+button.menu div {
+  position: relative;
+  width: 1.5rem;
+  height: 12px;
+  transition: 0.085s all ease-in;
+  cursor: pointer;
+  display: flex;
 }
-
-* {
-  box-sizing: border-box;
+button.menu div span {
+  position: absolute;
+  height: 2px;
+  width: 1.5rem;
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  display: block;
+  transition: 0.085s all ease-in;
+  border-radius: 100px;
+  background-color: #212121;
+}
+button.menu div span.top {
+  top: 0;
+}
+button.menu div span.bottom {
+  bottom: 0;
+}
+button.menu :hover span.top {
+  width: 1rem;
+}
+button.menu.true div {
+  width: 18px;
+  height: 19px;
+}
+button.menu.true span.top {
+  transform-origin: left center;
+  width: 1.5rem;
+  transform: rotate(45deg);
+}
+button.menu.true span.bottom {
+  transform-origin: left center;
+  transform: rotate(-45deg);
 }
