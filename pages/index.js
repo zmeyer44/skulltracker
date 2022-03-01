@@ -115,6 +115,7 @@ export default function Home() {
               <a
                 href="https://twitter.com/zmeyer44"
                 target="_blank"
+                rel="noreferrer"
                 className="text-blue-600 ml-1"
               >
                 Zachm.eth
