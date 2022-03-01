@@ -32,7 +32,7 @@ const ListItem = ({ rank, image, name, owner, allTime }) => {
           {ownerAddress}
         </a>
       </td>
-      <td>{allTime}</td>
+      <td className="flex justify-center">{allTime}</td>
     </tr>
   );
 };
@@ -42,9 +42,13 @@ const Table = ({ items }) => {
     <table className="table-fixed md:table-auto text-slate-200  min-w-[600px]">
       <thead>
         <tr>
-          <th className="flex">Item</th>
-          <th>Owner</th>
-          <th className="flex">Scans</th>
+          <th className="">
+            <div className="flex">Item</div>
+          </th>
+          <th className="">
+            <div className="flex">Owner</div>
+          </th>
+          <th className="">Scans</th>
         </tr>
       </thead>
       <tbody className="min-w-[600px]">
