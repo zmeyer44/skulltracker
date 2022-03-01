@@ -33,7 +33,7 @@ function createKey(location) {
 const Map = ({ center, zoom }) => {
   const { isLoaded } = useJsApiLoader({
     id: "a32a3733933e4793",
-    googleMapsApiKey: "AIzaSyBJFn_IDdn--M-fBrVmJqa-fcI7mGstjLc",
+    googleMapsApiKey: process.env.GOOGLE_API_KEY,
   });
 
   const [map, setMap] = useState(null);
