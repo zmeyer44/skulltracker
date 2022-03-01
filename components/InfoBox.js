@@ -35,8 +35,8 @@ const InfoBox = ({ image, name, owner, last7, allTime, rank, openseaUrl }) => {
         </div>
       </div>
       <div className="flex flex-col py-2 px-3 divide-y divide-slate-200 ">
-        <Item title="Last 7 days" value={`${last7} clicks`} />
-        <Item title="All time" value={`${allTime} clicks`} />
+        <Item title="Last 7 days" value={`${last7} scans`} />
+        <Item title="All time" value={`${allTime} scans`} />
         <Item title="Leaderboard Rank" value={`#${rank}`} />
       </div>
       <div className="flex justify-around items-center py-4">

@@ -76,11 +76,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="og:image"
-          content="https://firebasestorage.googleapis.com/v0/b/discovr-98d5c.appspot.com/o/images%2Fcryptoskullpreview.png?alt=media&token=e557a2c9-296c-4594-8fbf-4cbed695bbb4"
+          content="https://firebasestorage.googleapis.com/v0/b/skulltracker.appspot.com/o/www.skulltracker.app_.png?alt=media&token=a0c84ca4-e4c6-426e-a1f1-5af09cd9b1cb"
         />
         <meta
           name="twitter:image"
-          content="https://firebasestorage.googleapis.com/v0/b/discovr-98d5c.appspot.com/o/images%2Fcryptoskullpreview.png?alt=media&token=e557a2c9-296c-4594-8fbf-4cbed695bbb4"
+          content="https://firebasestorage.googleapis.com/v0/b/skulltracker.appspot.com/o/www.skulltracker.app_.png?alt=media&token=a0c84ca4-e4c6-426e-a1f1-5af09cd9b1cb"
         />
       </Head>
       <Layout>

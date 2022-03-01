@@ -44,7 +44,7 @@ const Table = ({ items }) => {
         <tr>
           <th className="flex">Item</th>
           <th>Owner</th>
-          <th className="flex">Clicks</th>
+          <th className="flex">Scans</th>
         </tr>
       </thead>
       <tbody className="min-w-[600px]">
