@@ -10,6 +10,7 @@
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.25",
     "@react-google-maps/api": "^2.7.0",
+    "@tailwindcss/line-clamp": "^0.3.1",
     "axios": "^0.26.0",
     "ethers": "^5.5.4",
     "firebase": "^9.6.7",

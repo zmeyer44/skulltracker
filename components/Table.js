@@ -19,10 +19,10 @@ const ListItem = ({ rank, image, name, owner, allTime }) => {
         <h3 className="font-bold flex mx-4 pr-6">{rank}</h3>
         <div className="flex flex-grow items-center space-x-3 py-4">
           <Image src={image} width={50} height={50} className="rounded-lg" />
-          <h3>{name}</h3>
+          <h3 className="overflow-hidden line-clamp-2">{name}</h3>
         </div>
       </td>
-      <td>
+      <td className="overflow-hidden">
         <a
           href={`https://opensea.io/${owner}`}
           target="_blank"
@@ -39,7 +39,7 @@ const ListItem = ({ rank, image, name, owner, allTime }) => {
 
 const Table = ({ items }) => {
   return (
-    <table className="table-fixed md:table-auto text-slate-200">
+    <table className="table-fixed md:table-auto text-slate-200  min-w-[600px]">
       <thead>
         <tr>
           <th className="flex">Item</th>
@@ -47,7 +47,7 @@ const Table = ({ items }) => {
           <th className="flex">Clicks</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="min-w-[600px]">
         {items?.map((item, index) => (
           <ListItem {...item} rank={index + 1} key={index} />
         ))}
