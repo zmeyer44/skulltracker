@@ -39,7 +39,7 @@ const ListItem = ({ rank, image, name, owner, allTime }) => {
 
 const Table = ({ items }) => {
   return (
-    <table class="table-fixed md:table-auto text-slate-200">
+    <table className="table-fixed md:table-auto text-slate-200">
       <thead>
         <tr>
           <th className="flex">Item</th>
