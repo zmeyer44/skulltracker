@@ -10,12 +10,18 @@ const Header = () => {
   return (
     <header className="fixed top-0 bg-white w-full flex justify-between sm:justify-around items-center py-4 shadow-lg z-50">
       <div className="relative w-36 h-10 z-20">
-        <Image
-          src="/assets/images/headerlogo.png"
-          layout="fill"
-          objectFit="contain"
-          alt="cryptoskulls"
-        />
+        <a
+          href="https://cryptoskulls.vercel.app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src="/assets/images/headerlogo.png"
+            layout="fill"
+            objectFit="contain"
+            alt="cryptoskulls"
+          />
+        </a>
       </div>
 
       <div className="flex items-center">
