@@ -103,7 +103,7 @@ export default function Home() {
             <h1 className="font-crush text-white text-[3em] md:text-[4em] text-center tracking-wide">
               Top <span className="text-red-700">leaderboard</span>
             </h1>
-            <div className="flex flex-col justify-center w-full space-y-5 px-3 mt-2 overflow-x-scroll">
+            <div className="flex flex-col justify-center w-full space-y-5 px-3 mt-2 overflow-x-scroll lg:overscroll-x-auto">
               <Table items={leaderboard} />
             </div>
           </div>
