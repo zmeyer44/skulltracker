@@ -22,16 +22,16 @@ const InfoBox = ({ image, name, owner, last7, allTime, rank, openseaUrl }) => {
   };
   useEffect(() => {
     init();
-  }, []);
+  }, [name]);
   return (
     <div
       className={`absolute top-10 right-0 flex flex-col bg-white w-[300px] h-auto m-4 rounded-lg border-red-600 border-2 divide-y divide-slate-400 drop-shadow-lg`}
     >
       <div className="flex items-center justify-between space-x-3 ">
         <Image src={image} height={120} width={120} className="rounded-lg" />
-        <div className="flex flex-col grow space-y-1">
+        <div className="flex flex-col grow space-y-1 max-w-[170px]">
           <h3 className="font-semibold">{name}</h3>
-          <p className="font-mono text-[.8em] text-slate-400">{`Owned by  ${ownerAddress}`}</p>
+          <p className="font-mono text-[.8em] text-slate-400 overflow-hidden line-clamp-1 break-all">{`Owned by  ${ownerAddress}`}</p>
         </div>
       </div>
       <div className="flex flex-col py-2 px-3 divide-y divide-slate-200 ">

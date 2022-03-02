@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { pageview } from "../utils/googleAnalytics";
 import "../styles/globals.css";
-import "../styles/glitch.css";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
