@@ -5,6 +5,7 @@ import LargeInfoBox from "../components/LargeInfoBox";
 import QRCode from "react-qr-code";
 import { HiHeart } from "react-icons/hi";
 import { newToken } from "../config/firebase/functions";
+import { event } from "../utils/googleAnalytics";
 
 export default function Generate() {
   const [input, setInput] = useState("");
@@ -19,6 +20,12 @@ export default function Generate() {
     if (input < 0 || input > 9999) {
       return setError("*** Please enter a Valid Token ID ***");
     }
+    event({
+      action: "generate",
+      params: {
+        token_id: input,
+      },
+    });
     const options = { method: "GET" };
     fetch(
       `https://api.opensea.io/api/v1/asset/0xc1Caf0C19A8AC28c41Fe59bA6c754e4b9bd54dE9/${input}`,
