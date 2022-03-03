@@ -26,6 +26,14 @@ export const recordScan = async (latitude, longitude, token, ip) => {
         });
       }
     }
+    await addDoc(collection(db, `tokens/${token}/scans`), {
+      ip,
+      createdAt: Date.now(),
+      token,
+      lat: latitude || null,
+      lng: longitude || null,
+    });
+
     return await updateDoc(doc(db, `tokens/${token}`), {
       ignoreList: arrayUnion(ip),
       allTime: increment(1),
@@ -36,7 +44,6 @@ export const recordScan = async (latitude, longitude, token, ip) => {
 
 export const newToken = async (token, owner, openseaUrl, name, image) => {
   const docRef = await getDoc(doc(db, `tokens/${token}`));
-  console.log(token, owner, openseaUrl, name, image);
   if (!docRef.exists()) {
     return await setDoc(doc(db, `tokens/${token}`), {
       owner,

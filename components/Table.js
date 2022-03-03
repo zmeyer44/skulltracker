@@ -12,7 +12,7 @@ const ListItem = ({ rank, image, name, owner, allTime }) => {
   };
   useEffect(() => {
     init();
-  }, []);
+  }, [owner]);
   return (
     <tr className="text-slate-200">
       <td className="flex items-center hover:shadow-lg ">
