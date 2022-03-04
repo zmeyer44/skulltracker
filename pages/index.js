@@ -20,12 +20,16 @@ export default function Home() {
   const router = useRouter();
   const { t } = router.query;
   const [coors, setCoors] = useState(null);
-  const [ip, setIp] = useState(null);
   const [leaderboard, setLeaderboard] = useState([]);
 
   const getData = async () => {
-    const res = await axios.get("https://geolocation-db.com/json/");
-    setIp(res.data);
+    if (!localStorage.getItem("deviceId")) {
+      localStorage.setItem(
+        "deviceId",
+        Math.random().toString(36).substr(2, 12)
+      );
+    }
+
     await navigator.geolocation.getCurrentPosition(function (position) {
       return setCoors({
         latitude: position.coords.latitude,
@@ -35,12 +39,16 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if (coors && ip) {
-      recordScan(coors?.latitude, coors?.longitude, t, ip.IPv4);
-      setIp(null);
+    if (coors) {
+      recordScan(
+        coors?.latitude,
+        coors?.longitude,
+        t,
+        localStorage.getItem("deviceId")
+      );
       setCoors(null);
     }
-  }, [ip, coors]);
+  }, [coors]);
 
   const init = async () => {
     const q = query(

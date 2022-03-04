@@ -10,11 +10,11 @@ import {
 } from "firebase/firestore";
 import { db } from ".";
 
-export const recordScan = async (latitude, longitude, token, ip) => {
+export const recordScan = async (latitude, longitude, token, id) => {
   const docRef = await getDoc(doc(db, `tokens/${token}`));
   if (!docRef.exists()) return;
   const docData = docRef.data();
-  if (!docData?.ignoreList?.includes(ip)) {
+  if (!docData?.ignoreList?.includes(id)) {
     if (latitude) {
       const duplicates = docData?.locations?.filter((location) => {
         const latDiff = Math.abs(location.lat - latitude);
@@ -28,7 +28,7 @@ export const recordScan = async (latitude, longitude, token, ip) => {
       }
     }
     await addDoc(collection(db, `tokens/${token}/scans`), {
-      ip,
+      id,
       createdAt: Date.now(),
       token,
       lat: latitude || null,
@@ -36,7 +36,7 @@ export const recordScan = async (latitude, longitude, token, ip) => {
     });
 
     return await updateDoc(doc(db, `tokens/${token}`), {
-      ignoreList: arrayUnion(ip),
+      ignoreList: arrayUnion(id),
       allTime: increment(1),
       last7: increment(1),
     });
