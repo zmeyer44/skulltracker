@@ -27,14 +27,15 @@ export const recordScan = async (latitude, longitude, token, id) => {
         });
       }
     }
-    await addDoc(collection(db, `tokens/${token}/scans`), {
+    const scanData = {
       id,
       createdAt: Date.now(),
       token,
       lat: latitude || null,
       lng: longitude || null,
-    });
-
+    };
+    await addDoc(collection(db, `tokens/${token}/scans`), scanData);
+    await addDoc(collection(db, `tokens/${token}/recentScans`), scanData);
     return await updateDoc(doc(db, `tokens/${token}`), {
       ignoreList: arrayUnion(id),
       allTime: increment(1),
