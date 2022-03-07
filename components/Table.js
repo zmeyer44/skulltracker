@@ -14,8 +14,12 @@ const ListItem = ({ rank, image, name, owner, allTime, openseaUrl }) => {
     init();
   }, [owner]);
   return (
-    <tr className="text-slate-200 border-b border-slate-900">
-      <td className="flex items-center hover:shadow-lg ">
+    <tr
+      className={`text-slate-200  hover:shadow-xl transition-all ${
+        rank % 2 == 0 ? "bg-zinc-800" : null
+      }`}
+    >
+      <td className="flex items-center">
         <div className="flex px-4 w-[75px]">
           <h3 className="font-bold">{rank}</h3>
         </div>
