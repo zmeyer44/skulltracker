@@ -15,6 +15,7 @@ import { recordScan } from "../config/firebase/functions";
 import Layout from "../layout";
 import Map from "../components/Map";
 import Table from "../components/Table";
+import Author from "../components/Author";
 
 export default function Home() {
   const router = useRouter();
@@ -81,15 +82,6 @@ export default function Home() {
       <Head>
         <title>Skull Tracker</title>
         <meta name="description" content="Welcome to Skull Nation" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="og:image"
-          content="https://firebasestorage.googleapis.com/v0/b/skulltracker.appspot.com/o/www.skulltracker.app_.png?alt=media&token=a0c84ca4-e4c6-426e-a1f1-5af09cd9b1cb"
-        />
-        <meta
-          name="twitter:image"
-          content="https://firebasestorage.googleapis.com/v0/b/skulltracker.appspot.com/o/www.skulltracker.app_.png?alt=media&token=a0c84ca4-e4c6-426e-a1f1-5af09cd9b1cb"
-        />
       </Head>
       <Layout>
         <div className="bg-dark w-full flex flex-col justify-center">
@@ -115,21 +107,7 @@ export default function Home() {
               <Table items={leaderboard} />
             </div>
           </div>
-          <div className="flex items-center mt-4 text-slate-400 text-[.9em] self-center mb-3">
-            <p className="">Made with</p>
-            <HiHeart className="mx-2" />
-            <p>
-              by{" "}
-              <a
-                href="https://twitter.com/zmeyer44"
-                target="_blank"
-                rel="noreferrer"
-                className="text-blue-600 ml-1"
-              >
-                Zachm.eth
-              </a>
-            </p>
-          </div>
+          <Author />
         </div>
       </Layout>
     </>

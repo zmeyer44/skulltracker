@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { fetchEnsName } from "../utils";
 
-const ListItem = ({ rank, image, name, owner, allTime }) => {
+const ListItem = ({ rank, image, name, owner, allTime, openseaUrl }) => {
   const [ownerAddress, setOwnerAddress] = useState(
     `${owner?.slice(0, 4)}...${owner?.slice(-4)}`
   );
@@ -14,13 +14,22 @@ const ListItem = ({ rank, image, name, owner, allTime }) => {
     init();
   }, [owner]);
   return (
-    <tr className="text-slate-200">
+    <tr className="text-slate-200 border-b border-slate-900">
       <td className="flex items-center hover:shadow-lg ">
-        <h3 className="font-bold flex mx-4 pr-6">{rank}</h3>
-        <div className="flex flex-grow items-center space-x-3 py-4">
-          <Image src={image} width={50} height={50} className="rounded-lg" />
-          <h3 className="overflow-hidden line-clamp-2">{name}</h3>
+        <div className="flex px-4 w-[75px]">
+          <h3 className="font-bold">{rank}</h3>
         </div>
+        <a
+          href={openseaUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="cursor-pointer"
+        >
+          <div className="flex flex-grow items-center space-x-3 py-4">
+            <Image src={image} width={50} height={50} className="rounded-lg" />
+            <h3 className="overflow-hidden line-clamp-2">{name}</h3>
+          </div>
+        </a>
       </td>
       <td className="overflow-hidden">
         <a

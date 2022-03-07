@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Layout from "../layout";
 import LargeInfoBox from "../components/LargeInfoBox";
+import Author from "../components/Author";
 import QRCode from "react-qr-code";
 import { HiHeart } from "react-icons/hi";
 import { newToken } from "../config/firebase/functions";
@@ -76,9 +77,11 @@ export default function Generate() {
   return (
     <>
       <Head>
-        <title>Skull Tracker | Generate</title>
-        <meta name="description" content="Skull Tracker QR Code generater" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Generate | Skull Tracker</title>
+        <meta
+          name="description"
+          content="Generate a Custom QR Code for your Skull"
+        />
       </Head>
       <Layout>
         <div className="bg-dark w-full flex flex-col justify-center grow">
@@ -133,21 +136,7 @@ export default function Generate() {
               </div>
             )}
           </div>
-          <div className="flex items-center mt-4 text-slate-400 text-[.9em] self-center mb-3">
-            <p className="">Made with</p>
-            <HiHeart className="mx-2" />
-            <p>
-              by{" "}
-              <a
-                href="https://twitter.com/zmeyer44"
-                target="_blank"
-                rel="noreferrer"
-                className="text-blue-600 ml-1"
-              >
-                Zachm.eth
-              </a>
-            </p>
-          </div>
+          <Author />
         </div>
       </Layout>
     </>

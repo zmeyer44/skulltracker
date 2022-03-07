@@ -11,6 +11,7 @@ import { HiHeart } from "react-icons/hi";
 import { db } from "../config/firebase";
 import Layout from "../layout";
 import Table from "../components/Table";
+import Author from "../components/Author";
 
 export default function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
@@ -40,9 +41,8 @@ export default function Leaderboard() {
   return (
     <>
       <Head>
-        <title>Skull Tracker | Leaderboard</title>
+        <title>Leaderboard | Skull Tracker</title>
         <meta name="description" content="Skull Tracker Leaderboard" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <div className="bg-dark w-full flex flex-col justify-center grow">
@@ -54,21 +54,7 @@ export default function Leaderboard() {
               <Table items={leaderboard} />
             </div>
           </div>
-          <div className="flex items-center mt-4 text-slate-400 text-[.9em] self-center mb-3">
-            <p className="">Made with</p>
-            <HiHeart className="mx-2" />
-            <p>
-              by{" "}
-              <a
-                href="https://twitter.com/zmeyer44"
-                target="_blank"
-                rel="noreferrer"
-                className="text-blue-600 ml-1"
-              >
-                Zachm.eth
-              </a>
-            </p>
-          </div>
+          <Author />
         </div>
       </Layout>
     </>
